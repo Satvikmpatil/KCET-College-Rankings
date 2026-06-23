@@ -1,0 +1,2 @@
+# KCET-College-Rankings
+GMCategory
