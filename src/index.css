@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #e94560;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.filters {
+  background: #1f1f3a;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+  border: 1px solid #2d2d5a;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #a0a0c0;
+  font-size: 0.85rem;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 10px 12px;
+  border: 2px solid #3d3d6a;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #252545;
+  color: #e0e0f0;
+}
+
+.filter-group input::placeholder {
+  color: #6a6a8a;
+}
+
+.filter-group select option {
+  background: #252545;
+  color: #e0e0f0;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  outline: none;
+  border-color: #e94560;
+  box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.2);
+}
+
+.clear-btn {
+  padding: 10px 20px;
+  background: #e94560;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.clear-btn:hover {
+  background: #ff6b8a;
+  transform: translateY(-1px);
+}
+
+.stats {
+  background: rgba(31, 31, 58, 0.95);
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 1px solid #2d2d5a;
+}
+
+.stats span {
+  color: #a0a0c0;
+  font-weight: 500;
+}
+
+.stats strong {
+  color: #e94560;
+}
+
+.table-container {
+  background: #1f1f3a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  border: 1px solid #2d2d5a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: linear-gradient(135deg, #e94560 0%, #0f3460 100%);
+  color: white;
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  white-space: nowrap;
+}
+
+th:hover {
+  background: linear-gradient(135deg, #ff6b8a 0%, #1a4a7a 100%);
+}
+
+th .sort-icon {
+  margin-left: 5px;
+  opacity: 0.7;
+}
+
+th.sorted .sort-icon {
+  opacity: 1;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #2d2d5a;
+  color: #d0d0e8;
+}
+
+tr:hover {
+  background: #2a2a4a;
+}
+
+tr:nth-child(even) {
+  background: #252545;
+}
+
+tr:nth-child(even):hover {
+  background: #2a2a4a;
+}
+
+.code-cell {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-weight: 600;
+  color: #e94560;
+}
+
+.rank-cell {
+  font-weight: 600;
+  text-align: right;
+  font-family: 'Monaco', 'Consolas', monospace;
+  color: #7dcea0;
+}
+
+.dept-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dept-CS { background: #1a3a5c; color: #5dade2; }
+.dept-CS-AIML { background: #3d1a4a; color: #c39bd3; }
+.dept-CS-CYB { background: #4a1a1a; color: #ec7063; }
+.dept-CS-DS { background: #1a4a2e; color: #58d68d; }
+.dept-AIML { background: #4a1a3a; color: #f1948a; }
+.dept-AIDS { background: #1a4a4a; color: #48c9b0; }
+.dept-ISE { background: #2e4a1a; color: #82e0aa; }
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: #6a6a8a;
+  font-size: 1.1rem;
+}
+
+.rank-range {
+  display: flex;
+  gap: 10px;
+}
+
+.rank-range input {
+  width: 100px;
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  th, td {
+    padding: 8px 6px;
+    font-size: 0.85rem;
+  }
+}
